@@ -1,0 +1,25 @@
+﻿@model AspCourseProject.WebUI.Models.MenuCategoryViewModel
+<li>
+    @Html.RouteLink("Все кланы", new
+    {
+        controller = "Person",
+        action = "List",
+        category = "all",
+        status = Model.CurrentStatus,
+        page = 1
+    })
+</li>
+
+@foreach (var link in Model.Categories)
+{
+    <li>
+        @Html.RouteLink(link, new
+        {
+            controller = "Person",
+            action = "List",
+            category = link,
+            status = Model.CurrentStatus,
+            page = 1
+        })
+    </li>
+}

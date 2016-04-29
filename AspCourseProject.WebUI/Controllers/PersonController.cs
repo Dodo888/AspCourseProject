@@ -3,15 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AspCourseProject.Domain;
+using AspCourseProject.WebUI.Models;
+using SportsStore.WebUI.Models;
 
 namespace AspCourseProject.WebUI.Controllers
 {
     public class PersonController : Controller
     {
-        // GET: Person
-        public ActionResult Index()
+        private IPersonRepository repository;
+        public int pageSize = 2;
+        public PersonController(IPersonRepository productRepository)
         {
-            return View();
+            this.repository = productRepository;
+        }
+
+        public ViewResult List(string category, string status, string subName = (string)null, int page = 1)
+        {
+            var filterResult = repository.Table
+                .Where(p => category == "all" || p.Category == category)
+                .Where(p => status == "all" || p.IsAlive == (status == "alive"))
+                .Where(p => p.Name.Contains(subName) || subName == (string)null);
+            PersonsListViewModel model = new PersonsListViewModel
+            {
+                Persons = filterResult.OrderBy(p => p.PersonId)
+                    .Skip((page - 1)*pageSize)
+                    .Take(pageSize),
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = pageSize,
+                    TotalItems = filterResult.Count()
+                },
+                CurrentCategory = category,
+                CurrentStatus = status
+            };
+            return View(model);
         }
     }
 }

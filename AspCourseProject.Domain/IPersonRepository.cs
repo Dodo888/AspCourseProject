@@ -5,7 +5,6 @@ namespace AspCourseProject.Domain
 {
     public interface IPersonRepository
     {
-        IQueryable<Person> Persons { get; }
-        void SaveProduct(Person person);
+        IQueryable<Person> Table { get; }
     }
 }

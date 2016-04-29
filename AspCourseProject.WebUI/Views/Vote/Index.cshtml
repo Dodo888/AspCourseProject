@@ -1,0 +1,44 @@
+﻿@model AspCourseProject.WebUI.Models.VotesViewModel
+
+@{
+    ViewBag.Title = "Votes";
+}
+
+<h2>Your votes</h2>
+<table width="90%" align="center">
+    <thead>
+        <tr>
+            <th align="left">Your choice</th>
+            <th align="right">Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vote in Model.Votes.GetVotes)
+        {
+            <tr>
+                <td align="left">@vote.Name</td>
+                <td align="right">@vote.Price</td>
+                <td>
+                    @using (Html.BeginForm("RemoveVote", "Vote"))
+                    {
+                        @Html.Hidden("PersonId", vote.PersonId)
+                        @Html.Hidden("ReturnUrl", Model.ReturnUrl)
+                        <input class="actionButtons" type="submit" value="Remove" />
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td align="right">Total:</td>
+            <td align="right">
+                @Model.Votes.GetVotesPrice()
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<p align="center" class="actionButtons">
+    <a href="@Model.ReturnUrl">Continue voting</a>
+</p>
+

@@ -1,0 +1,41 @@
+﻿@using AspCourseProject.Domain.Entities
+@using AspCourseProject.WebUI.HtmlHelpers
+@model AspCourseProject.WebUI.Models.PersonsListViewModel
+@{
+    ViewBag.Title = "List";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.EditorFor(m => m.SubName)
+    <input type="submit" value="find!" />
+}
+@foreach (var p in Model.Persons)
+{
+    <div class="item">
+        <img src="@Url.Content(p.Image)"/>
+        <div id="info">
+            <h3>Name: @p.Name</h3>
+            <h5>Description: @p.Description</h5>
+            <div>House: @p.Category</div>
+            <h4>Price: @p.Price</h4>
+            <h4>Rating: @p.Rating</h4>
+            <h4>@p.ToString()</h4>
+        </div>
+        @using (Html.BeginForm("AddVote", "Vote"))
+        {
+            @Html.Hidden("PersonId", p.PersonId)
+            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+            <input type="submit" value="♥Vote" />
+        }
+
+    </div>
+}
+<div class="pager">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new
+    {
+        page = x, category = Model.CurrentCategory, status = Model.CurrentStatus 
+    
+    }))
+</div>
+

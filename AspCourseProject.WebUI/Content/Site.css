@@ -1,6 +1,12 @@
-﻿body {
+﻿
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: Cambria, Georgia, "Times new Roman";
+}
+#item {
+    margin: auto;
+    float: left;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +27,16 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.item {
+    border: 1px solid black;
+    display: flex;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }

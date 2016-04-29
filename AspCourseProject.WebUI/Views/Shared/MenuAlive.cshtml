@@ -1,0 +1,32 @@
+﻿@model string
+
+<li>
+    @Html.RouteLink("Живые", new
+    {
+        controller = "Person",
+        action = "List",
+        category = Model,
+        status = "alive",
+        page = 1
+    })
+</li>
+<li>
+    @Html.RouteLink("Все статусы", new
+    {
+        controller = "Person",
+        action = "List",
+        category = Model,
+        status = "all",
+        page = 1
+    })
+</li>
+<li>    
+    @Html.RouteLink("Мертвые", new
+{
+    controller = "Person",
+    action = "List",
+    category = Model,
+    status = "dead",
+    page = 1
+})
+</li>

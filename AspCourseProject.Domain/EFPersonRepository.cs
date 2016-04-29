@@ -6,6 +6,6 @@ namespace AspCourseProject.Domain
     public class EFPersonRepository : IPersonRepository
     {
         private EFDbContext context = new EFDbContext();
-        public IQueryable<Person> Persons => context.Persons;
+        public IQueryable<Person> Table => context.Table;
     }
 }
