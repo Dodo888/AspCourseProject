@@ -46,6 +46,7 @@
                 @{ Html.RenderAction("MenuCategory", "Navigation"); }
                 @{ Html.RenderAction("MenuAlive", "Navigation"); }
             </ul>
+            @{ Html.RenderAction("Search", "Navigation"); }
         </div>
     </div>
 </div>
@@ -53,7 +54,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year – GoT Votes</p>
         </footer>
     </div>
 

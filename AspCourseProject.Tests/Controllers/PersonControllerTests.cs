@@ -1,13 +1,10 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using AspCourseProject.Domain;
 using AspCourseProject.Domain.Entities;
 using AspCourseProject.WebUI.Controllers;
 using AspCourseProject.WebUI.Models;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using NUnit.Framework;
-using SportsStore.WebUI.Models;
 using Assert = NUnit.Framework.Assert;
 
 namespace AspCourseProject.Tests.Controllers

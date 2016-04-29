@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using AspCourseProject.Domain;
 using AspCourseProject.WebUI.Models;
-using SportsStore.WebUI.Models;
 
 namespace AspCourseProject.WebUI.Controllers
 {
@@ -23,7 +19,7 @@ namespace AspCourseProject.WebUI.Controllers
             var filterResult = repository.Table
                 .Where(p => category == "all" || p.Category == category)
                 .Where(p => status == "all" || p.IsAlive == (status == "alive"))
-                .Where(p => p.Name.Contains(subName) || subName == (string)null);
+                .Where(p => subName == (string)null || p.Name.Contains(subName));
             PersonsListViewModel model = new PersonsListViewModel
             {
                 Persons = filterResult.OrderBy(p => p.PersonId)

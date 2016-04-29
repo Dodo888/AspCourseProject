@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AspCourseProject.Domain.Entities
+﻿namespace AspCourseProject.Domain.Entities
 {
     public class Person
     {
@@ -19,7 +13,6 @@ namespace AspCourseProject.Domain.Entities
         public bool IsAlive { get; set; }
 
         public string Status() => IsAlive ? "alive" : "dead";
-        private string Sex() => Gender ? "М" : "Ж";
-        public override string ToString() => "Статус: " + Status() + " Пол:" + Sex();
+        public string Sex() => Gender ? "М" : "Ж";
     }
 }

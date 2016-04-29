@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using AspCourseProject.Domain;
 using AspCourseProject.WebUI.Models;
@@ -30,6 +27,16 @@ namespace AspCourseProject.WebUI.Controllers
         public PartialViewResult MenuAlive(string category, string status)
         {
             return PartialView("MenuAlive", category);
+        }
+
+        public PartialViewResult Search(string category, string status)
+        {
+            var model = new UrlViewModel
+            {
+                CurrentCategory = category,
+                CurrentStatus = status
+            };
+            return PartialView("Search", model);
         }
 
     }

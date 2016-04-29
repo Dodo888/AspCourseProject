@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using AspCourseProject.Domain.Entities;
-using SportsStore.WebUI.Models;
 
 namespace AspCourseProject.WebUI.Models
 {

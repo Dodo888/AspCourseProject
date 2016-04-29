@@ -216,6 +216,7 @@
     <Compile Include="Models\MenuCategoryViewModel.cs" />
     <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Models\PersonsListViewModel.cs" />
+    <Compile Include="Models\UrlViewModel.cs" />
     <Compile Include="Models\VotesViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -288,10 +289,9 @@
     <Content Include="Views\Shared\MenuCategory.cshtml" />
     <Content Include="Views\Shared\MenuAlive.cshtml" />
     <Content Include="Views\Vote\Index.cshtml" />
+    <Content Include="Views\Navigation\Search.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Navigation\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

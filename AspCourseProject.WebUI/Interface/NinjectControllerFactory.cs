@@ -3,7 +3,8 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using AspCourseProject.Domain;
 using Ninject;
-namespace SportsStore.WebUI.Infrastructure
+
+namespace AspCourseProject.WebUI.Interface
 {
     // реализация пользовательской фабрики контроллеров,
     // наследуясь от фабрики используемой по умолчанию

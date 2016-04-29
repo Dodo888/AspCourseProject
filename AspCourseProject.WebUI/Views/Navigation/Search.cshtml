@@ -1,0 +1,7 @@
+﻿@model AspCourseProject.WebUI.Models.UrlViewModel
+
+@using (Html.BeginForm("List", "Person", FormMethod.Get, new { @class = "navbar-nav navbar-right" }))
+{
+    @Html.EditorFor(m => m.SubName)
+    <input type="submit" value="find!"/>
+}

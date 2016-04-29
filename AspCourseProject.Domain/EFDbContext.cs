@@ -19,7 +19,8 @@ namespace AspCourseProject.Domain
                 Price = 10,
                 Category = "House of Stark",
                 Gender = true,
-                IsAlive = false
+                IsAlive = false,
+                Description = "Jon Snow is a major character in the first, second, third, fourth, fifth, and sixth seasons. He is played by starring cast member Kit Harington, and debuts in the series premiere. Jon is the bastard son of Lord Eddard Stark of Winterfell. Upon his father leaving for the south, Jon decides to join the Night's Watch, defending the Wall from the threats beyond."
             };
             var p2 = new Person
             {
@@ -31,7 +32,8 @@ namespace AspCourseProject.Domain
                 Price = 10,
                 Category = "House of Stark",
                 Gender = false,
-                IsAlive = true
+                IsAlive = true,
+                Description = "Sansa Bolton, née Stark, is a major character in the first, second, third, fourth, fifth, and sixth seasons. She is played by starring cast member Sophie Turner, and debuts in the series premiere. Sansa is the daughter of Lord Eddard Stark of Winterfell and his wife Lady Catelyn, sister of Robb, Arya, Bran and Rickon Stark, and half-sister of Jon Snow."
             };
             var p3 = new Person
             {
@@ -43,7 +45,8 @@ namespace AspCourseProject.Domain
                 Price = 5,
                 Category = "House of Baratheon",
                 Gender = true,
-                IsAlive = true
+                IsAlive = true,
+                Description = "Ser Davos Seaworth, also known as the Onion Knight, is a major character in the second, third, fourth, fifth and sixth seasons. He is played by starring cast member Liam Cunningham and debuts in \"The North Remembers\". Davos is a landed knight, and a former smuggler who was in the service of Stannis Baratheon, Lord of Dragonstone and claimant to the Iron Throne, whom he serves as Hand of the King."
             };
             var p4 = new Person
             {
@@ -55,7 +58,8 @@ namespace AspCourseProject.Domain
                 Price = 5,
                 Category = "House of Baratheon",
                 Gender = false,
-                IsAlive = true
+                IsAlive = true,
+                Description = "Melisandre, often referred to as The Red Woman, is a major character in the second, third, fourth, fifth, and sixth seasons. She is played by starring cast member Carice van Houten and debuts in \"The North Remembers.\" She is a priestess of the Lord of Light and a close advisor to Stannis Baratheon in his campaign to take the Iron Throne, but ultimately abandons him after her actions inadvertently lead to the destruction of his family and army and flees to Castle Black."
             };
 
             db.Table.Add(p1);

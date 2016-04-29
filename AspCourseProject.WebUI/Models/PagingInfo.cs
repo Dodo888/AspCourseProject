@@ -1,5 +1,5 @@
 ﻿using System;
-namespace SportsStore.WebUI.Models
+namespace AspCourseProject.WebUI.Models
 {
     public class PagingInfo
     {
