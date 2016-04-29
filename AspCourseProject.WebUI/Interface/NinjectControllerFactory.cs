@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 using System.Web.Routing;
+using AspCourseProject.Domain;
 using Ninject;
 namespace SportsStore.WebUI.Infrastructure
 {
@@ -26,6 +27,7 @@ namespace SportsStore.WebUI.Infrastructure
         }
         private void AddBindings()
         {
+            ninjectKernel.Bind<IPersonRepository>().To<EFPersonRepository>();
             // конфигурирование контейнера
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AspCourseProject.Domain.Entities
 {
-    class Person
+    public class Person
     {
         public int PersonId { get; set; }
         public string Name { get; set; }
