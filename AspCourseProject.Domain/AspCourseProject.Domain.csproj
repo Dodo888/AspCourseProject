@@ -52,7 +52,6 @@
     <Compile Include="EFDbContext.cs" />
     <Compile Include="EFPersonRepository.cs" />
     <Compile Include="Entities\Person.cs" />
-    <Compile Include="Entities\VoteResults.cs" />
     <Compile Include="IPersonRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

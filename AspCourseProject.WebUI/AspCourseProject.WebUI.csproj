@@ -217,6 +217,7 @@
     <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Models\PersonsListViewModel.cs" />
     <Compile Include="Models\UrlViewModel.cs" />
+    <Compile Include="Models\VoteResults.cs" />
     <Compile Include="Models\VotesViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
