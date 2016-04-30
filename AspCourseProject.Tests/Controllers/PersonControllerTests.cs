@@ -38,7 +38,7 @@ namespace AspCourseProject.Tests.Controllers
             var result = (PersonsListViewModel)sutController.List("all","all", null,2).Model;
             // Assert
             PagingInfo pageInfo = result.PagingInfo;
-            Assert.AreEqual(pageInfo.CurrentPage, 2);   
+            Assert.AreEqual(pageInfo.CurrentPage, 2);
             Assert.AreEqual(pageInfo.ItemsPerPage, 3);
             Assert.AreEqual(pageInfo.TotalItems, 5);
             Assert.AreEqual(pageInfo.TotalPages, 2);

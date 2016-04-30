@@ -1,6 +1,8 @@
 ﻿using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using AspCourseProject.Domain.Entities;
+using AspCourseProject.WebUI.Binders;
 using AspCourseProject.WebUI.Interface;
 
 namespace AspCourseProject.WebUI
@@ -14,6 +16,7 @@ namespace AspCourseProject.WebUI
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
+            ModelBinders.Binders.Add(typeof(VoteResults), new VoteResultsModelBinder());
         }
     }
 }
