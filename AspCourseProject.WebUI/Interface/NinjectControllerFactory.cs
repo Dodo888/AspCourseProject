@@ -30,9 +30,9 @@ namespace AspCourseProject.WebUI.Interface
         }
         private void AddBindings()
         {
-            ninjectKernel.Bind<IPersonRepository>().To<EFPersonRepository>();
-            ninjectKernel.Bind<IVoteRepository>().To<EFVoteRepository>();
-            ninjectKernel.Bind<IVoteItemsRepository>().To<EFVoteItemsRepository>();
+            ninjectKernel.Bind<IPersonRepository>().To<EFRepository>();
+            ninjectKernel.Bind<IVoteRepository>().To<EFRepository>();
+            ninjectKernel.Bind<IVoteItemsRepository>().To<EFRepository>();
             // конфигурирование контейнера
         }
     }

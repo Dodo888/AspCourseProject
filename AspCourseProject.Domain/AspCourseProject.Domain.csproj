@@ -50,13 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\EFDbContext.cs" />
-    <Compile Include="Context\EFPersonRepository.cs" />
-    <Compile Include="Context\EFVoteItemsRepository.cs" />
-    <Compile Include="Context\EFVoteRepository.cs" />
+    <Compile Include="Context\EFRepository.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\Vote.cs" />
     <Compile Include="Entities\VoteItems.cs" />
-    <Compile Include="Interfaces\IPersonRepository.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IVoteItemsRepository.cs" />
     <Compile Include="Interfaces\IVoteRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
