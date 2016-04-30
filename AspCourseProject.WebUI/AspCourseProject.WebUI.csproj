@@ -291,6 +291,7 @@
     <Content Include="Views\Shared\MenuAlive.cshtml" />
     <Content Include="Views\Vote\Index.cshtml" />
     <Content Include="Views\Navigation\Search.cshtml" />
+    <Content Include="Views\Shared\PersonPartial.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

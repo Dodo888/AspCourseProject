@@ -14,7 +14,7 @@ namespace AspCourseProject.WebUI.Controllers
             this.repository = productRepository;
         }
 
-        public ViewResult List(string category, string status, string subName = (string)null, int page = 1)
+        public ViewResult List(string category="all", string status="all", string subName = (string)null, int page = 1)
         {
             var filterResult = repository.Table
                 .Where(p => category == "all" || p.Category == category)
