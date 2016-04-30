@@ -8,7 +8,19 @@ namespace AspCourseProject.Domain.Context
     {
         private EFDbContext context = new EFDbContext();
         public IQueryable<Person> Table => context.Table;
-        public IQueryable<VoteItems> VoteItems => context.VoteItems;
+
+        public IQueryable<VoteItem> VoteItems => context.VoteItems;
+        public void SaveVoteItem(VoteItem voteItem)
+        {
+            context.VoteItems.Add(voteItem);
+            context.SaveChanges();
+        }
+
         public IQueryable<Vote> Votes => context.Votes;
+        public void SaveVote(Vote vote)
+        {
+            context.Votes.Add(vote);
+            context.SaveChanges();
+        }
     }
 }

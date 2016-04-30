@@ -129,7 +129,7 @@ namespace AspCourseProject.Domain.Context
     {
         public DbSet<Person> Table { get; set; }
         public DbSet<Vote> Votes { get; set; }
-        public DbSet<VoteItems> VoteItems { get; set; }
+        public DbSet<VoteItem> VoteItems { get; set; }
 
         public EFDbContext()
         {

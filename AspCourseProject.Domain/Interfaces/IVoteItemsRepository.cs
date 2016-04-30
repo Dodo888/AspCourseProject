@@ -9,6 +9,7 @@ namespace AspCourseProject.Domain.Interfaces
 {
     public interface IVoteItemsRepository
     {
-        IQueryable<VoteItems> VoteItems { get; }
+        IQueryable<VoteItem> VoteItems { get; }
+        void SaveVoteItem(VoteItem voteItem);
     }
 }

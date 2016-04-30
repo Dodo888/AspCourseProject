@@ -10,5 +10,6 @@ namespace AspCourseProject.Domain
     public interface IVoteRepository
     {
         IQueryable<Vote> Votes { get; }
+        void SaveVote(Vote vote);
     }
 }

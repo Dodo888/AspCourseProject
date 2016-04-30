@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AspCourseProject.Domain.Entities
 {
-    public class VoteItems
+    public class VoteItem
     {
         public int VoteItemsId { get; set; }
         public int UserId { get; set; }
