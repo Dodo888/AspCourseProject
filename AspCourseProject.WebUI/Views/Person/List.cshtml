@@ -7,7 +7,28 @@
 
 @foreach (var p in Model.Persons)
 {
+<<<<<<< a7a6cafa30c45bde4f07c238cb25a699308563d5
     @Html.Partial("PersonPartial", p)
+=======
+    <div class="item">
+        <img src="@Url.Content(p.Image)"/>
+        <div class="info">
+            <div class="person-name">@p.Name</div>
+            <div class="person-description">Description: @p.Description</div>
+            <div class="person-category">House: @p.Category</div>
+            <div class="person-price">Price: @p.Price</div>
+            <div class="person-rating">Rating: @p.Rating</div>
+            <div class="person-gender">Gender: @p.Sex()</div>
+            <div class="person-status">Status: @p.Status()</div>
+        </div>
+        @using (Html.BeginForm("AddVote", "Vote", FormMethod.Post, new { @class="voting-button"}))
+        {
+            @Html.Hidden("PersonId", p.PersonId)
+            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+            <input type="submit" value="♥Vote" />
+        }
+    </div>
+>>>>>>> Some changes
 }
 <div class="pager">
     @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new
