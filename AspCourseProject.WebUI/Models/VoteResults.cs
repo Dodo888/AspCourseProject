@@ -5,12 +5,13 @@ namespace AspCourseProject.Domain.Entities
 {
     public class VoteResults
     {
-        private List<Person> Votes = new List<Person>();
+        public List<Person> Votes = new List<Person>();
+        public int Balance = 20;
 
         public void AddVote(Person person)
         {
             Person vote = Votes.FirstOrDefault(p => p.PersonId == person.PersonId);
-            if (vote == null)
+            if (vote == null && GetVotesPrice()+person.Price <= Balance)
             {
                 Votes.Add(person);
             }

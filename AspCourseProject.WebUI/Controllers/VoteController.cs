@@ -15,43 +15,32 @@ namespace AspCourseProject.WebUI.Controllers
             repository = repo;
         }
 
-        public RedirectToRouteResult AddVote(int personId, string returnUrl)
+        public RedirectToRouteResult AddVote(VoteResults votes, int personId, string returnUrl)
         {
             Person person = repository.Table.FirstOrDefault(p => p.PersonId == personId);
             if (person != null)
             {
-                GetVotes().AddVote(person);
+               votes.AddVote(person);
             }
             return RedirectToAction("Index", new {returnUrl});
         }
 
-        public RedirectToRouteResult RemoveVote(int personId, string returnUrl)
+        public RedirectToRouteResult RemoveVote(VoteResults votes, int personId, string returnUrl)
         {
             Person person = repository.Table.FirstOrDefault(p => p.PersonId == personId);
             if (person != null)
             {
-                GetVotes().RemoveVote(person);
+                votes.RemoveVote(person);
             }
             return RedirectToAction("Index", new {returnUrl});
-        }
-
-        private VoteResults GetVotes()
-        {
-            var votes = (VoteResults) Session["Votes"];
-            if (votes == null)
-            {
-                votes = new VoteResults();
-                Session["Votes"] = votes;
-            }
-            return votes;
         }
 
         // GET: Vote
-        public ViewResult Index (string returnUrl)
+        public ViewResult Index (VoteResults votes, string returnUrl)
         {
             return View(new VotesViewModel
             {
-                Votes = GetVotes(),
+                Votes = votes,
                 ReturnUrl = returnUrl
             });
         }
