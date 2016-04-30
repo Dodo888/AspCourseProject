@@ -1,0 +1,22 @@
+﻿@using AspCourseProject.Domain.Entities
+@model Person
+<div class="item">
+    <img src="@Url.Content(Model.Image)" />
+    <div class="info">
+        <div class="person-name">@Model.Name</div>
+        <div class="person-description">Description: @Model.Description</div>
+        <div class="person-category">House: @Model.Category</div>
+        <div class="person-price">Price: @Model.Price</div>
+        <div class="person-rating">Rating: @Model.Rating</div>
+        <div class="person-gender">Gender: @Model.Sex()</div>
+        <div class="person-status">Status: @Model.Status()</div>
+    </div>
+    @using (Html.BeginForm("AddVote", "Vote", FormMethod.Post, new { @class = "voting-button" }))
+    {
+        @Html.Hidden("PersonId", Model.PersonId)
+        @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+        <input type="submit" value="♥Vote" />
+    }
+
+</div>
+

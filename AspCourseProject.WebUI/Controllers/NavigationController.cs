@@ -12,7 +12,7 @@ namespace AspCourseProject.WebUI.Controllers
         {
             repository = repo;
         }
-        public PartialViewResult MenuCategory(string category, string status)
+        public PartialViewResult MenuCategory(string category ="all", string status="all")
         {
             var model = new MenuCategoryViewModel
             {
@@ -24,7 +24,7 @@ namespace AspCourseProject.WebUI.Controllers
             };
             return PartialView(model);
         }
-        public PartialViewResult MenuAlive(string category, string status)
+        public PartialViewResult MenuAlive(string category="all", string status="all")
         {
             return PartialView("MenuAlive", category);
         }
