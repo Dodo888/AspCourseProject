@@ -19,12 +19,12 @@
                 <td align="left">@vote.Name</td>
                 <td align="right">@vote.Price</td>
                 <td>
-                    @using (Html.BeginForm("RemoveVote", "Vote"))
-                    {
-                        @Html.Hidden("PersonId", vote.PersonId)
-                        @Html.Hidden("ReturnUrl", Model.ReturnUrl)
-                        <input class="actionButtons" type="submit" value="Remove" />
-                    }
+                        @using (Html.BeginForm("RemoveVote", "Vote"))
+                        {
+                            @Html.Hidden("PersonId", vote.PersonId)
+                            @Html.Hidden("ReturnUrl", Model.ReturnUrl)
+                            <input class="actionButtons" type="submit" value="Remove" />
+                        }
                 </td>
             </tr>
         }
