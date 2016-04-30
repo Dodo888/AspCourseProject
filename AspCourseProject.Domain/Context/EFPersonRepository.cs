@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using AspCourseProject.Domain.Entities;
 
-namespace AspCourseProject.Domain
+namespace AspCourseProject.Domain.Context
 {
     public class EFPersonRepository : IPersonRepository
     {

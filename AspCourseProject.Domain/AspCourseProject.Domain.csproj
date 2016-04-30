@@ -49,16 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EFDbContext.cs" />
-    <Compile Include="EFPersonRepository.cs" />
+    <Compile Include="Context\EFDbContext.cs" />
+    <Compile Include="Context\EFPersonRepository.cs" />
+    <Compile Include="Context\EFVoteItemsRepository.cs" />
+    <Compile Include="Context\EFVoteRepository.cs" />
     <Compile Include="Entities\Person.cs" />
-    <Compile Include="IPersonRepository.cs" />
+    <Compile Include="Entities\Vote.cs" />
+    <Compile Include="Entities\VoteItems.cs" />
+    <Compile Include="Interfaces\IPersonRepository.cs" />
+    <Compile Include="Interfaces\IVoteItemsRepository.cs" />
+    <Compile Include="Interfaces\IVoteRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
