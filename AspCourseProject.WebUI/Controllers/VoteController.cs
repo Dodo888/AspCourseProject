@@ -44,5 +44,16 @@ namespace AspCourseProject.WebUI.Controllers
                 ReturnUrl = returnUrl
             });
         }
+
+        public PartialViewResult Summary(VoteResults votes)
+        {
+            return PartialView(votes);
+        }
+
+        [Authorize]
+        public ViewResult Checkout()
+        {
+            return View();
+        }
     }
 }

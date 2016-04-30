@@ -1,0 +1,13 @@
+﻿@model AspCourseProject.Domain.Entities.VoteResults
+
+<div id="cart">
+    <span class="caption">
+        <b>Your cart:</b>
+        @Model.Votes.Count() item(s),
+        @Model.Votes.Sum(x => x.Price) points
+    </span>
+    @Html.ActionLink("Checkout", "Index", "Vote", new
+{
+    returnUrl = Request.Url.PathAndQuery
+}, null)
+</div>

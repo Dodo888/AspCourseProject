@@ -293,6 +293,8 @@
     <Content Include="Views\Vote\Index.cshtml" />
     <Content Include="Views\Navigation\Search.cshtml" />
     <Content Include="Views\Shared\PersonPartial.cshtml" />
+    <Content Include="Views\Vote\Summary.cshtml" />
+    <Content Include="Views\Vote\Checkout.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

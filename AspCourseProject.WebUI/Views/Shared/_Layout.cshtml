@@ -47,6 +47,8 @@
                 @{ Html.RenderAction("MenuAlive", "Navigation"); }
             </ul>
             @{ Html.RenderAction("Search", "Navigation"); }
+            @{Html.RenderAction("Summary", "Vote");}
+            @Html.Partial("_LoginPartial")
         </div>
     </div>
 </div>

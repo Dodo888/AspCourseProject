@@ -15,14 +15,7 @@
     {
         @Html.Hidden("PersonId", Model.PersonId)
         @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-        if (@Model.Price < 7)
-        {
-            <input type="submit" value="♥Vote" />
-        }
-        else
-        {
-            <input type="submit" value="♥Vote" disabled/>
-        }
+        <input type="submit" value="♥Vote" disabled/>
     }
 </div>
 
