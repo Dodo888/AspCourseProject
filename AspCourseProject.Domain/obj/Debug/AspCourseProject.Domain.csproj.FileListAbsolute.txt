@@ -22,3 +22,15 @@ C:\Users\el_razor\Desktop\kontur\AspCourseProject\AspCourseProject.Domain\bin\De
 C:\Users\el_razor\Desktop\kontur\AspCourseProject\AspCourseProject.Domain\obj\Debug\AspCourseProject.Domain.csprojResolveAssemblyReference.cache
 C:\Users\el_razor\Desktop\kontur\AspCourseProject\AspCourseProject.Domain\obj\Debug\AspCourseProject.Domain.dll
 C:\Users\el_razor\Desktop\kontur\AspCourseProject\AspCourseProject.Domain\obj\Debug\AspCourseProject.Domain.pdb
+C:\Users\el_razor\Desktop\aspnetGOT\AspCourseProject.Domain\bin\Debug\AspCourseProject.Domain.dll.config
+C:\Users\el_razor\Desktop\aspnetGOT\AspCourseProject.Domain\bin\Debug\AspCourseProject.Domain.dll
+C:\Users\el_razor\Desktop\aspnetGOT\AspCourseProject.Domain\bin\Debug\AspCourseProject.Domain.pdb
+C:\Users\el_razor\Desktop\aspnetGOT\AspCourseProject.Domain\bin\Debug\EntityFramework.dll
+C:\Users\el_razor\Desktop\aspnetGOT\AspCourseProject.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\el_razor\Desktop\aspnetGOT\AspCourseProject.Domain\bin\Debug\EntityFramework.xml
+C:\Users\el_razor\Desktop\aspnetGOT\AspCourseProject.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\el_razor\Desktop\aspnetGOT\AspCourseProject.Domain\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\el_razor\Desktop\aspnetGOT\AspCourseProject.Domain\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\el_razor\Desktop\aspnetGOT\AspCourseProject.Domain\obj\Debug\AspCourseProject.Domain.csprojResolveAssemblyReference.cache
+C:\Users\el_razor\Desktop\aspnetGOT\AspCourseProject.Domain\obj\Debug\AspCourseProject.Domain.dll
+C:\Users\el_razor\Desktop\aspnetGOT\AspCourseProject.Domain\obj\Debug\AspCourseProject.Domain.pdb

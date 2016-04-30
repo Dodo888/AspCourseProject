@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
-using System.Security.Policy;
 using AspCourseProject.Domain.Entities;
-using Microsoft.SqlServer.Server;
 
-namespace AspCourseProject.Domain
+namespace AspCourseProject.Domain.Context
 {
     public class MyContextInitializer : DropCreateDatabaseAlways<EFDbContext>
     {
@@ -122,10 +120,7 @@ namespace AspCourseProject.Domain
             };
 
 
-            db.Table.Add(p1);
-            db.Table.Add(p2);
-            db.Table.Add(p3);
-            db.Table.Add(p4);
+            db.Table.AddRange(p);
             db.SaveChanges();
         }
     }
@@ -133,6 +128,8 @@ namespace AspCourseProject.Domain
     public class EFDbContext: DbContext
     {
         public DbSet<Person> Table { get; set; }
+        public DbSet<Vote> Votes { get; set; }
+        public DbSet<VoteItems> VoteItems { get; set; }
 
         public EFDbContext()
         {
