@@ -1,6 +1,6 @@
 ﻿using System.Linq;
-using AspCourseProject.Domain;
 using AspCourseProject.Domain.Entities;
+using AspCourseProject.Domain.Interfaces;
 using AspCourseProject.WebUI.Controllers;
 using AspCourseProject.WebUI.Models;
 using Moq;
@@ -12,13 +12,13 @@ namespace AspCourseProject.Tests.Controllers
     [TestFixture]
     public class PersonControllerTest
     {
-        private Mock<IPersonRepository> sutMock;
+        private Mock<IRepository> sutMock;
         private PersonController sutController;
 
         [TestFixtureSetUp]
         public void Init()
         {
-            sutMock = new Mock<IPersonRepository>();
+            sutMock = new Mock<IRepository>();
 
             sutMock.Setup(m => m.Table).Returns(new Person[]
             {

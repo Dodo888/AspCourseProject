@@ -1,6 +1,6 @@
 ﻿
 body {
-    padding-top: 50px;
+    padding-top: 80px;
     padding-bottom: 20px;
     font-family: Cambria, Georgia, "Times new Roman";
 }
@@ -54,4 +54,9 @@ textarea {
 
 .nav {
     display: flex;
+}
+
+.voting-thanks {
+    font-size: 50px;
+    padding-top: 100px;
 }

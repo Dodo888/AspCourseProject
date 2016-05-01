@@ -8,8 +8,8 @@ namespace AspCourseProject.Domain.Entities
 {
     public class VoteItem
     {
-        public int VoteItemsId { get; set; }
-        public int UserId { get; set; }
+        public int VoteItemId { get; set; }
+        public int VoteId { get; set; }
         public int PersonId { get; set; }
     }
 }

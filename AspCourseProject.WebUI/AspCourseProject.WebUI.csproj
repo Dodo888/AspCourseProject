@@ -209,14 +209,24 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\IUserProvider.cs" />
+    <Compile Include="Helpers\IWeekProvider.cs" />
     <Compile Include="Helpers\PagingHelpers.cs" />
+    <Compile Include="Helpers\UserProvider.cs" />
+    <Compile Include="Helpers\WeekProvider.cs" />
     <Compile Include="Interface\NinjectControllerFactory.cs" />
+    <Compile Include="Migrations\201604300837596_InitialCreate.cs" />
+    <Compile Include="Migrations\201604300837596_InitialCreate.Designer.cs">
+      <DependentUpon>201604300837596_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MenuCategoryViewModel.cs" />
     <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Models\PersonsListViewModel.cs" />
+    <Compile Include="Models\PersonView.cs" />
     <Compile Include="Models\UrlViewModel.cs" />
     <Compile Include="Models\VoteResults.cs" />
     <Compile Include="Models\VotesViewModel.cs" />
@@ -296,7 +306,11 @@
     <Content Include="Views\Vote\Summary.cshtml" />
     <Content Include="Views\Vote\Checkout.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201604300837596_InitialCreate.resx">
+      <DependentUpon>201604300837596_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

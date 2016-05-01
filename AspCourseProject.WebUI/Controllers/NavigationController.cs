@@ -1,14 +1,14 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
-using AspCourseProject.Domain;
+using AspCourseProject.Domain.Interfaces;
 using AspCourseProject.WebUI.Models;
 
 namespace AspCourseProject.WebUI.Controllers
 {
     public class NavigationController: Controller
     {
-        private IPersonRepository repository;
-        public NavigationController(IPersonRepository repo)
+        private IRepository repository;
+        public NavigationController(IRepository repo)
         {
             repository = repo;
         }

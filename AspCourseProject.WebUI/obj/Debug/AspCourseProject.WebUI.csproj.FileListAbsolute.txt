@@ -313,3 +313,5 @@ C:\Users\el_razor\Desktop\aspnetGOT\AspCourseProject.WebUI\bin\ru\Microsoft.Owin
 C:\Users\el_razor\Desktop\aspnetGOT\AspCourseProject.WebUI\obj\Debug\AspCourseProject.WebUI.csprojResolveAssemblyReference.cache
 C:\Users\el_razor\Desktop\aspnetGOT\AspCourseProject.WebUI\obj\Debug\AspCourseProject.WebUI.dll
 C:\Users\el_razor\Desktop\aspnetGOT\AspCourseProject.WebUI\obj\Debug\AspCourseProject.WebUI.pdb
+C:\Users\user\Documents\Visual Studio 2015\Projects\AspCourseProject\AspCourseProject.WebUI\obj\Debug\AspCourseProject.WebUI.Migrations.InitialCreate.resources
+C:\Users\user\Documents\Visual Studio 2015\Projects\AspCourseProject\AspCourseProject.WebUI\obj\Debug\AspCourseProject.WebUI.csproj.GenerateResource.Cache

@@ -4,7 +4,7 @@ using AspCourseProject.Domain.Interfaces;
 
 namespace AspCourseProject.Domain.Context
 {
-    public class EFRepository : IPersonRepository, IVoteRepository, IVoteItemsRepository
+    public class EFRepository : IRepository
     {
         private EFDbContext context = new EFDbContext();
         public IQueryable<Person> Table => context.Table;

@@ -1,21 +1,29 @@
 ﻿@using AspCourseProject.Domain.Entities
-@model Person
+@model AspCourseProject.WebUI.Models.PersonView
 <div class="item">
-    <img src="@Url.Content(Model.Image)" />
+    <img src="@Url.Content(Model.Person.Image)" />
     <div class="info">
-        <div class="person-name">@Model.Name</div>
-        <div class="person-description">Description: @Model.Description</div>
-        <div class="person-category">House: @Model.Category</div>
-        <div class="person-price">Price: @Model.Price</div>
-        <div class="person-rating">Rating: @Model.Rating</div>
-        <div class="person-gender">Gender: @Model.Sex()</div>
-        <div class="person-status">Status: @Model.Status()</div>
+        <div class="person-name">@Model.Person.Name</div>
+        <div class="person-description">Description: @Model.Person.Description</div>
+        <div class="person-category">House: @Model.Person.Category</div>
+        <div class="person-price">Price: @Model.Person.Price</div>
+        <div class="person-rating">Rating: @Model.Person.Rating</div>
+        <div class="person-gender">Gender: @Model.Person.Sex()</div>
+        <div class="person-status">Status: @Model.Person.Status()</div>
     </div>
     @using (Html.BeginForm("AddVote", "Vote", FormMethod.Post, new { @class = "voting-button" }))
     {
-        @Html.Hidden("PersonId", Model.PersonId)
+        @Html.Hidden("PersonId", Model.Person.PersonId)
         @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-        <input type="submit" value="♥Vote" />
+        if (@Model.IsVoted)
+         {
+             <input type="submit" value="♥ Vote" disabled/>
+        }
+        else
+        {
+            <input type="submit" value="♥ Vote" />
+        }
+
     }
 </div>
 

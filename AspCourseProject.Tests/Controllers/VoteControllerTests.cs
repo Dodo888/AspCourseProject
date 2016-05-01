@@ -1,7 +1,9 @@
 ﻿using System.Linq;
-using AspCourseProject.Domain;
+using System.Web.Mvc;
 using AspCourseProject.Domain.Entities;
+using AspCourseProject.Domain.Interfaces;
 using AspCourseProject.WebUI.Controllers;
+using AspCourseProject.WebUI.Helpers;
 using AspCourseProject.WebUI.Models;
 using Moq;
 using NUnit.Framework;
@@ -11,14 +13,16 @@ namespace AspCourseProject.Tests.Controllers
     [TestFixture]
     public class VoteControllerTests
     {
-        private Mock<IPersonRepository> sutMock;
+        private Mock<IRepository> sutMock;
         private VoteController sutController;
         private VoteResults votes;
+        private Mock<IUserProvider> sutUserProvider;
+        private Mock<IWeekProvider> sutWeekProvider;
 
         [TestFixtureSetUp]
         public void Init()
         {
-            sutMock = new Mock<IPersonRepository>();
+            sutMock = new Mock<IRepository>();
 
             sutMock.Setup(m => m.Table).Returns(new Person[]
             {
@@ -28,7 +32,16 @@ namespace AspCourseProject.Tests.Controllers
                 new Person {PersonId = 4, Name = "P4", Category = "2", Price=10},
                 new Person {PersonId = 5, Name = "P5", Category = "1", Price=10}
             }.AsQueryable());
-            sutController = new VoteController(sutMock.Object);
+
+            sutUserProvider = new Mock<IUserProvider>();
+            sutUserProvider.Setup(m => m.GetUserName(It.IsAny<Controller>()))
+                .Returns("Test");
+
+            sutWeekProvider = new Mock<IWeekProvider>();
+            sutWeekProvider.Setup(m => m.GetWeek())
+                .Returns(1);
+
+            sutController = new VoteController(sutMock.Object, sutUserProvider.Object, sutWeekProvider.Object);
         }
 
         [Test]
@@ -88,7 +101,7 @@ namespace AspCourseProject.Tests.Controllers
         public void Can_View_Cart_Contents()
         {
             votes = new VoteResults();
-            VoteController target = new VoteController(null);
+            VoteController target = new VoteController(null, null, null);
             VotesViewModel result = (VotesViewModel)target.Index(votes, "myUrl").ViewData.Model;
             // Assert
             Assert.AreSame(result.Votes, votes);

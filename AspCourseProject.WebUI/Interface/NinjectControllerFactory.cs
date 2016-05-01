@@ -4,6 +4,7 @@ using System.Web.Routing;
 using AspCourseProject.Domain;
 using AspCourseProject.Domain.Context;
 using AspCourseProject.Domain.Interfaces;
+using AspCourseProject.WebUI.Helpers;
 using Ninject;
 
 namespace AspCourseProject.WebUI.Interface
@@ -30,9 +31,9 @@ namespace AspCourseProject.WebUI.Interface
         }
         private void AddBindings()
         {
-            ninjectKernel.Bind<IPersonRepository>().To<EFRepository>();
-            ninjectKernel.Bind<IVoteRepository>().To<EFRepository>();
-            ninjectKernel.Bind<IVoteItemsRepository>().To<EFRepository>();
+            ninjectKernel.Bind<IRepository>().To<EFRepository>();
+            ninjectKernel.Bind<IUserProvider>().To<UserProvider>();
+            ninjectKernel.Bind<IWeekProvider>().To<WeekProvider>();
             // конфигурирование контейнера
         }
     }

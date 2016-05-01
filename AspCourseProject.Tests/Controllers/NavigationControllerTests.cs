@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AspCourseProject.Domain;
+﻿using System.Linq;
 using AspCourseProject.Domain.Entities;
+using AspCourseProject.Domain.Interfaces;
 using AspCourseProject.WebUI.Controllers;
 using AspCourseProject.WebUI.Models;
 using Moq;
@@ -15,13 +11,13 @@ namespace AspCourseProject.Tests.Controllers
     [TestFixture]
     internal class NavigationControllerTests
     {
-        private Mock<IPersonRepository> sutMock;
+        private Mock<IRepository> sutMock;
         private NavigationController sutController;
 
         [TestFixtureSetUp]
         public void Init()
         {
-            sutMock = new Mock<IPersonRepository>();
+            sutMock = new Mock<IRepository>();
             sutMock.Setup(m => m.Table).Returns(new Person[]
             {
                 new Person {PersonId = 1, Name = "P1", Category = "House of Stark"},

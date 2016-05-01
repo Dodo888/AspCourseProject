@@ -17,6 +17,8 @@ namespace AspCourseProject.WebUI.Models
 
         [HiddenInput(DisplayValue = false)]
         public PagingInfo PagingInfo { get; set; }
+        [HiddenInput(DisplayValue = false)]
+        public bool IsVoted { get; set; }
 
         public string SubName { get; set; }
     }

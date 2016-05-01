@@ -54,9 +54,7 @@
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\Vote.cs" />
     <Compile Include="Entities\VoteItem.cs" />
-    <Compile Include="Interfaces\IPersonRepository.cs" />
-    <Compile Include="Interfaces\IVoteItemsRepository.cs" />
-    <Compile Include="Interfaces\IVoteRepository.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

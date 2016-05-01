@@ -1,15 +1,16 @@
 ﻿using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Web.Mvc;
-using AspCourseProject.Domain;
+using AspCourseProject.Domain.Interfaces;
 using AspCourseProject.WebUI.Models;
 
 namespace AspCourseProject.WebUI.Controllers
 {
     public class PersonController : Controller
     {
-        private IPersonRepository repository;
+        private IRepository repository;
         public int pageSize = 2;
-        public PersonController(IPersonRepository productRepository)
+        public PersonController(IRepository productRepository)
         {
             this.repository = productRepository;
         }
@@ -20,6 +21,8 @@ namespace AspCourseProject.WebUI.Controllers
                 .Where(p => category == "all" || p.Category == category)
                 .Where(p => status == "all" || p.IsAlive == (status == "alive"))
                 .Where(p => subName == (string)null || p.Name.Contains(subName));
+            var currentWeek = 1;
+            var isVoted = repository.Votes.Any(x => x.Week == currentWeek && x.UserName == User.Identity.Name);
             PersonsListViewModel model = new PersonsListViewModel
             {
                 Persons = filterResult.OrderBy(p => p.PersonId)
@@ -32,7 +35,8 @@ namespace AspCourseProject.WebUI.Controllers
                     TotalItems = filterResult.Count()
                 },
                 CurrentCategory = category,
-                CurrentStatus = status
+                CurrentStatus = status,
+                IsVoted = isVoted
             };
             return View(model);
         }

@@ -133,7 +133,7 @@ namespace AspCourseProject.Domain.Context
 
         public EFDbContext()
         {
-            Database.SetInitializer<EFDbContext>(new MyContextInitializer());
+            //Database.SetInitializer<EFDbContext>(new MyContextInitializer());
         }
     }
 }

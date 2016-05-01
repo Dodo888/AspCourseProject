@@ -1,7 +1,13 @@
-﻿
+﻿@model bool
+
 @{
     ViewBag.Title = "Checkout";
 }
-
-<h2>Thank you for voting!</h2>
-
+@if (@Model)
+{
+    <div class="voting-thanks">Thank you for voting!</div>
+}
+else
+{
+<div class="voting-thanks">You have already voted.</div>
+}
