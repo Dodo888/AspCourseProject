@@ -57,6 +57,7 @@
     <Compile Include="Interfaces\IPersonRepository.cs" />
     <Compile Include="Interfaces\IVoteItemsRepository.cs" />
     <Compile Include="Interfaces\IVoteRepository.cs" />
+    <Compile Include="ModelHelpers\ReflectionHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
