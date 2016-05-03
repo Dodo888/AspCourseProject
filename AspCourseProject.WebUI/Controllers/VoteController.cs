@@ -22,14 +22,15 @@ namespace AspCourseProject.WebUI.Controllers
             WeekProvider = weekProvider;
         }
 
-        public RedirectToRouteResult AddVote(VoteResults votes, int personId, string returnUrl)
+        public ActionResult AddVote(VoteResults votes, int personId, string returnUrl)
         {
             Person person = repository.Table.FirstOrDefault(p => p.PersonId == personId);
             if (person != null)
             {
                votes.AddVote(person);
             }
-            return RedirectToAction("Index", new {returnUrl});
+            //return RedirectToAction("Index", new {returnUrl});
+            return PartialView("Summary", votes);
         }
 
         public RedirectToRouteResult RemoveVote(VoteResults votes, int personId, string returnUrl)

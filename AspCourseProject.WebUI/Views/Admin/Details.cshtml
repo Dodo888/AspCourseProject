@@ -1,0 +1,81 @@
+﻿@using AspCourseProject.Domain.ModelHelpers
+@model AspCourseProject.Domain.Entities.Person
+
+<div>
+    <h4>Person</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageData)
+        </dt>
+
+        <dd>
+            @if (Model.ImageData != null)
+            {
+                <img class="for-admin" src="@Url.Action("GetImage", "Person", new {Model.PersonId})"/>
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsAlive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsAlive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Model.Gender.Description()
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PersonId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

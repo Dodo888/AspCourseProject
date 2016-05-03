@@ -315,3 +315,4 @@ C:\Users\el_razor\Desktop\aspnetGOT\AspCourseProject.WebUI\obj\Debug\AspCoursePr
 C:\Users\el_razor\Desktop\aspnetGOT\AspCourseProject.WebUI\obj\Debug\AspCourseProject.WebUI.pdb
 C:\Users\user\Documents\Visual Studio 2015\Projects\AspCourseProject\AspCourseProject.WebUI\obj\Debug\AspCourseProject.WebUI.Migrations.InitialCreate.resources
 C:\Users\user\Documents\Visual Studio 2015\Projects\AspCourseProject\AspCourseProject.WebUI\obj\Debug\AspCourseProject.WebUI.csproj.GenerateResource.Cache
+C:\Users\user\Documents\Visual Studio 2015\Projects\AspCourseProject\AspCourseProject.WebUI\obj\Debug\AspCourseProject.WebUI.Migrations.Enums.resources

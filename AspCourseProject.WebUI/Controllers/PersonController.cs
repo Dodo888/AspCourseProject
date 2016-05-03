@@ -40,5 +40,17 @@ namespace AspCourseProject.WebUI.Controllers
             };
             return View(model);
         }
+        public FileContentResult GetImage(int personId)
+        {
+            var prod = repository.Table.FirstOrDefault(p => p.PersonId == personId);
+            if (prod != null)
+            {
+                return File(prod.ImageData, prod.ImageMimeType);
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

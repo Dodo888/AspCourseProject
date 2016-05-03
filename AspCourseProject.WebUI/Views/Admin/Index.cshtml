@@ -1,0 +1,74 @@
+﻿@using AspCourseProject.Domain.ModelHelpers
+@model IEnumerable<AspCourseProject.Domain.Entities.Person>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsAlive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th></th>
+    </tr>
+
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @if (item.ImageData != null)
+            {
+                <img class="for-admin" src="@Url.Action("GetImage", "Person", new {item.PersonId})" />
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsAlive)
+        </td>
+        <td>
+            @item.Gender.Description()
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PersonId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PersonId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PersonId })
+        </td>
+    </tr>
+}
+
+</table>

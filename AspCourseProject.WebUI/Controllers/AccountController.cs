@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -79,7 +80,7 @@ namespace AspCourseProject.WebUI.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    return PartialView(model);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -89,6 +90,38 @@ namespace AspCourseProject.WebUI.Controllers
                     ModelState.AddModelError("", "Неудачная попытка входа.");
                     return View(model);
             }
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<ActionResult> LoginPartial(LoginViewModel model, string returnUrl)
+        {
+            //if (!ModelState.IsValid)
+            //{
+            //    return View(model);
+            //}
+
+            //// Сбои при входе не приводят к блокированию учетной записи
+            //// Чтобы ошибки при вводе пароля инициировали блокирование учетной записи, замените на shouldLockout: true
+            var result =
+                await SignInManager.PasswordSignInAsync(model.Email, model.Password, false, shouldLockout: false);
+            switch (result)
+            {
+                case SignInStatus.Success:
+                    return PartialView("LoginPartialSuccess", model.Email);
+            }
+            //    case SignInStatus.LockedOut:
+            //        return View("Lockout");
+            //    case SignInStatus.RequiresVerification:
+            //        return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+            //    case SignInStatus.Failure:
+            //    default:
+            //        ModelState.AddModelError("", "Неудачная попытка входа.");
+            //        return View(model);
+            //}
+            //        Thread.Sleep(500);
+            //return PartialView("_LoginPartial");
+            return PartialView("_LoginPartial");
         }
 
         //
@@ -392,7 +425,7 @@ namespace AspCourseProject.WebUI.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("List", "Person");
         }
 
         //

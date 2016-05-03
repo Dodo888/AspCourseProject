@@ -1,0 +1,24 @@
+﻿@using AspCourseProject.Domain.Entities
+@model AspCourseProject.WebUI.Models.CommentViewModel
+
+<p>
+    @Html.ActionLink("Create New", "Create", new Comment{PersonId = @Model.PersonId, UserName = User.Identity.Name, Date = DateTime.Now})
+</p>
+<table class="table">
+@foreach (var item in Model.Comments) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Text)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+    </tr>
+}
+</table>
